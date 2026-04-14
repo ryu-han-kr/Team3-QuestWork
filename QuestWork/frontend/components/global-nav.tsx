@@ -35,8 +35,8 @@ export function GlobalNav() {
 
         {/* CTA Buttons */}
         <div className="flex items-center gap-2">
-          <Button variant="outline" className="text-xs sm:text-sm">
-            Sign In
+          <Button variant="outline" className="text-xs sm:text-sm border-border transition-all duration-200 hover:border-primary hover:text-primary hover:shadow-[0_0_0_2px_var(--primary-light)]" asChild>
+            <Link href="/login">Sign In</Link>
           </Button>
           <Button className="bg-primary text-xs text-primary-foreground hover:bg-primary-hover sm:text-sm">
             Post Quest
