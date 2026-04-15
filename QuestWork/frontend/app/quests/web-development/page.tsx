@@ -167,7 +167,7 @@ const MOCK_QUESTS: Quest[] = [
 
 const QUESTS_PER_PAGE = 10
 
-export default function QuestsPage() {
+export default function WebDevelopmentQuestsPage() {
   const [currentPage, setCurrentPage] = useState(1)
   const [searchQuery, setSearchQuery] = useState('')
   const [filters, setFilters] = useState<QuestFiltersType>({
@@ -230,7 +230,7 @@ export default function QuestsPage() {
         {/* Page Title */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-foreground">
-            Available Quests
+            Web Development Quests
           </h1>
           <p className="mt-1 text-foreground-muted">
             {filteredQuests.length} quest{filteredQuests.length !== 1 ? 's' : ''}{' '}
