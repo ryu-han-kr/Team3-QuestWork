@@ -1,0 +1,13 @@
+var R=require("../chunks/ssr/[turbopack]_runtime.js")("server/app/page.js")
+R.c("server/chunks/ssr/0nby_next_dist_12vkxab._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0zns2ql._.js")
+R.c("server/chunks/ssr/0nby_next_dist_0z43.ng._.js")
+R.c("server/chunks/ssr/[externals]__0lxblph._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0f57i0h._.js")
+R.c("server/chunks/ssr/0nby_next_dist_client_components_0on6zxz._.js")
+R.c("server/chunks/ssr/0nby_next_dist_client_components_builtin_forbidden_0z9vyt3.js")
+R.c("server/chunks/ssr/0nby_next_dist_client_components_builtin_unauthorized_0gss0be.js")
+R.c("server/chunks/ssr/0nby_next_dist_client_components_builtin_global-error_11yx4w~.js")
+R.c("server/chunks/ssr/QuestWork_frontend__next-internal_server_app_page_actions_03556_m.js")
+R.m("[project]/QuestWork/frontend/node_modules/next/dist/esm/build/templates/app-page.js?page=/page { MODULE_0 => \"[project]/QuestWork/frontend/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)\", MODULE_1 => \"[project]/QuestWork/frontend/node_modules/next/dist/client/components/builtin/not-found.js [app-rsc] (ecmascript, Next.js Server Component)\", MODULE_2 => \"[project]/QuestWork/frontend/node_modules/next/dist/client/components/builtin/forbidden.js [app-rsc] (ecmascript, Next.js Server Component)\", MODULE_3 => \"[project]/QuestWork/frontend/node_modules/next/dist/client/components/builtin/unauthorized.js [app-rsc] (ecmascript, Next.js Server Component)\", MODULE_4 => \"[project]/QuestWork/frontend/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)\", MODULE_5 => \"[project]/QuestWork/frontend/app/page.tsx [app-rsc] (ecmascript, Next.js Server Component)\" } [app-rsc] (ecmascript)")
+module.exports=R.m("[project]/QuestWork/frontend/node_modules/next/dist/esm/build/templates/app-page.js?page=/page { MODULE_0 => \"[project]/QuestWork/frontend/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)\", MODULE_1 => \"[project]/QuestWork/frontend/node_modules/next/dist/client/components/builtin/not-found.js [app-rsc] (ecmascript, Next.js Server Component)\", MODULE_2 => \"[project]/QuestWork/frontend/node_modules/next/dist/client/components/builtin/forbidden.js [app-rsc] (ecmascript, Next.js Server Component)\", MODULE_3 => \"[project]/QuestWork/frontend/node_modules/next/dist/client/components/builtin/unauthorized.js [app-rsc] (ecmascript, Next.js Server Component)\", MODULE_4 => \"[project]/QuestWork/frontend/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)\", MODULE_5 => \"[project]/QuestWork/frontend/app/page.tsx [app-rsc] (ecmascript, Next.js Server Component)\" } [app-rsc] (ecmascript)").exports
