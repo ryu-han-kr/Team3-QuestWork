@@ -12,7 +12,6 @@ public class config implements WebMvcConfigurer {
         registry.addMapping("/**") // 모든 경로에 대해
                 .allowedOrigins("http://localhost:3000")
                 .allowedHeaders("http://localhost:5173")
-                .allowedHeaders("http://localhost:8000")
                 //.allowedOriginPatterns("*") // 혹시 몰라 넣어둔 편법, 모든 종류의 도메인을 다 ok 해줌
                 .allowedMethods("GET", "POST", "PUT", "UPDATE", "DELETE", "PATCH", "OPTIONS")
                 .allowedHeaders("*") // 모든 종류의 http 헤더를 허용, Content-type, Authorization 등
