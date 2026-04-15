@@ -50,6 +50,7 @@ export default function SignupPage() {
     } catch (error) {
       console.error('회원가입 중 오류:', error)
     }
+  }
 
   // const sendVerificationCode = () => {
   //   // TODO: API call to send email verification code
@@ -81,7 +82,7 @@ export default function SignupPage() {
             <Label htmlFor="name">이름</Label>
             <Input
               id="name"
-              name="name"
+              name="username"
               value={formData.username}
               onChange={handleChange}
               placeholder="이름을 입력하세요"

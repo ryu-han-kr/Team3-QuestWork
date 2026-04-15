@@ -16,9 +16,25 @@ export function LoginForm() {
   const [password, setPassword] = useState('')
   const [rememberMe, setRememberMe] = useState(false)
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log({ userId, password, rememberMe })
+    try {
+      const response = await fetch('http://localhost:8000/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: userId, password }),
+      })
+
+      if (response.ok) {
+        window.location.href = '/'
+      } else {
+        const errorData = await response.json()
+        alert(`로그인 실패: ${errorData.message || '아이디 또는 비밀번호를 확인해주세요'}`)
+      }
+    } catch (error) {
+      console.error('로그인 중 오류:', error)
+      alert('서버 연결에 실패했습니다.')
+    }
   }
 
 
