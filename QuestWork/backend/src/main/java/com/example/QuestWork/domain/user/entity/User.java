@@ -5,6 +5,8 @@ import com.example.QuestWork.domain.user.constant.UserStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -49,7 +51,7 @@ public class User {
     @Column(name= "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    @CreationTimestamp
+    @UpdateTimestamp
     @Column(name= "updated_at", nullable = false, updatable = true)
     private LocalDateTime updatedAt;
 
