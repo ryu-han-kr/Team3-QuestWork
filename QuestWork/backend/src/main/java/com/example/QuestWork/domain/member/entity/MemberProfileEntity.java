@@ -1,7 +1,8 @@
-package com.example.QuestWork.member.entity;
+package com.example.QuestWork.domain.member.entity;
 
-import com.example.QuestWork.member.constant.MemberLevel;
-import com.example.QuestWork.user.UserEntity;
+import com.example.QuestWork.domain.member.constant.MemberLevel;
+
+import com.example.QuestWork.domain.user.entity.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,7 +21,7 @@ public class MemberProfileEntity {
 
     @OneToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private UserEntity user; // UserEntity와 1:1 연결
+    private User user; // UserEntity와 1:1 연결
 
     private String portfolioUrl;
 
@@ -40,4 +41,12 @@ public class MemberProfileEntity {
     // 기술 스택 목록과의 연결 (1:N)
     @OneToMany(mappedBy = "memberProfile")
     private List<MemberSkillTagEntity> skillTags;
+
+//프로필 업데이트 석민이꺼
+    public void updateProfile(String intro, MemberLevel level, String portfolioUrl, int totalCareerYears) {
+        this.intro = intro;
+        this.level = level;
+        this.portfolioUrl = portfolioUrl;
+        this.totalCareerYears = totalCareerYears;
+    }
 }

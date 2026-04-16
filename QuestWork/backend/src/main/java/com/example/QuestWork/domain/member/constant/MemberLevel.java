@@ -1,4 +1,4 @@
-package com.example.QuestWork.member.constant;
+package com.example.QuestWork.domain.member.constant;
 
 public enum MemberLevel {
 

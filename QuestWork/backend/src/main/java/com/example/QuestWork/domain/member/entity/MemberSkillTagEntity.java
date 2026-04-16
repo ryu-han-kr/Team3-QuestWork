@@ -1,7 +1,7 @@
-package com.example.QuestWork.member.entity;
+package com.example.QuestWork.domain.member.entity;
 
 
-import com.example.QuestWork.skill.SkillTagEntity;
+import com.example.QuestWork.domain.skill.SkillTagEntity;
 
 
 import jakarta.persistence.*;
