@@ -44,7 +44,7 @@ export function SearchFilter({
           value={roleFilter}
           onValueChange={(value) => onRoleFilterChange(value as Role | "전체")}
         >
-          <SelectTrigger className="w-[140px]">
+          <SelectTrigger className="w-35">
             <SelectValue placeholder="권한 필터" />
           </SelectTrigger>
           <SelectContent>
@@ -58,7 +58,7 @@ export function SearchFilter({
           value={statusFilter}
           onValueChange={(value) => onStatusFilterChange(value as Status | "전체")}
         >
-          <SelectTrigger className="w-[140px]">
+          <SelectTrigger className="w-35">
             <SelectValue placeholder="상태 필터" />
           </SelectTrigger>
           <SelectContent>
