@@ -1,16 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
 
 export function GlobalNav() {
-  const [nickname, setNickname] = useState<string | null>(null)
-
-  useEffect(() => {
-    setNickname(localStorage.getItem('nickname'))
-  }, [])
-
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background">
       <nav className="mx-auto flex max-w-content items-center justify-between px-4 py-4 sm:px-6">
@@ -42,27 +35,12 @@ export function GlobalNav() {
 
         {/* CTA Buttons */}
         <div className="flex items-center gap-2">
-          {nickname ? (
-            <>
-              <span className="text-sm font-medium text-foreground">{nickname}님</span>
-              <Button
-                variant="outline"
-                className="text-xs sm:text-sm border-border"
-                onClick={() => { localStorage.removeItem('nickname'); setNickname(null) }}
-              >
-                로그아웃
-              </Button>
-            </>
-          ) : (
-            <>
-              <Button variant="outline" className="text-xs sm:text-sm border-border transition-all duration-200 hover:border-primary hover:text-primary hover:shadow-[0_0_0_2px_var(--primary-light)]" asChild>
-                <Link href="/login">Sign In</Link>
-              </Button>
-              <Button className="bg-primary text-xs text-primary-foreground hover:bg-primary-hover sm:text-sm">
-                Post Quest
-              </Button>
-            </>
-          )}
+          <Button variant="outline" className="text-xs sm:text-sm">
+            Sign In
+          </Button>
+          <Button className="bg-primary text-xs text-primary-foreground hover:bg-primary-hover sm:text-sm">
+            Post Quest
+          </Button>
         </div>
       </nav>
     </header>
