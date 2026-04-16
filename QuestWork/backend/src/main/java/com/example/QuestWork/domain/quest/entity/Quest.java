@@ -1,6 +1,7 @@
 package com.example.QuestWork.domain.quest.entity;
 
 
+import com.example.QuestWork.domain.quest.constant.QuestStatus;
 import com.example.QuestWork.domain.user.entity.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -42,7 +43,9 @@ public class Quest {
     @Column(nullable = false)
     private LocalDateTime deadline;
 
+    @Builder.Default
     @Column(nullable = false, length = 30)
+    @Enumerated(EnumType.STRING)
     private QuestStatus status = QuestStatus.OPEN;
 
     @CreatedDate
