@@ -2,13 +2,14 @@ package com.example.QuestWork.domain.user.service;
 
 import com.example.QuestWork.domain.user.constant.AuthProvider;
 import com.example.QuestWork.domain.user.constant.UserStatus;
+import com.example.QuestWork.domain.user.dto.UserLoginRequestDto;
 import com.example.QuestWork.domain.user.dto.UserSignupRequesetDto;
 import com.example.QuestWork.domain.user.entity.User;
-import com.example.QuestWork.domain.user.repository.UserRepository;
-import jakarta.transaction.Transactional;
+import com.example.QuestWork.domain.user.repository.UserRepository;;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
@@ -18,6 +19,15 @@ import java.time.LocalDateTime;
 public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+
+    @Transactional(readOnly=true)
+    public String login(UserLoginRequestDto dto) {
+        User user = userRepository.findByEmail(dto.getEmail())
+                .orElseThrow(() -> new RuntimeException("존재하지 않는 사용자입니다"));
+        if(!passwordEncoder.matches(dto.getPassword(), user.getPassword())) {
+            throw new RuntimeException("비밀번호가 틀렸습니다"); }
+        return user.getNickname();
+    }
 
     @Transactional
     public Long signup(UserSignupRequesetDto dto) {

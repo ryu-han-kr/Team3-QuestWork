@@ -1,5 +1,6 @@
 package com.example.QuestWork.domain.user.controller;
 
+import com.example.QuestWork.domain.user.dto.UserLoginRequestDto;
 import com.example.QuestWork.domain.user.dto.UserSignupRequesetDto;
 import com.example.QuestWork.domain.user.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -12,17 +13,26 @@ import org.springframework.web.bind.annotation.*;
 
 public class AuthController {
 
-    private final UserService userservice;
+    private final UserService userService;
+
+    @PostMapping("login")
+    public ResponseEntity<String> login(@RequestBody UserLoginRequestDto dto) {
+        String nickname = userService.login(dto);
+        return ResponseEntity.ok(nickname);
+
+    }
 
     // 실제 입력이 들어오는 주소(3000:/api/auth/signup)
     @PostMapping("/signup")
     public ResponseEntity<String> signup(@RequestBody UserSignupRequesetDto dto) {
         //@RequestBody: 프론트에서 보낸 json data를 DTO 객체로 변환해서 받음
 
-        userservice.signup(dto);
+        userService.signup(dto);
 
         return ResponseEntity.ok("회원 가입 성공");
     }
+
+
 
 
 }

@@ -22,10 +22,12 @@ export function LoginForm() {
       const response = await fetch('http://localhost:8000/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: userId, password }),
+        body: JSON.stringify({ email: userId, password }),
       })
 
       if (response.ok) {
+        const nickname = await response.text()
+        localStorage.setItem('nickname', nickname)
         window.location.href = '/'
       } else {
         const errorData = await response.json()
