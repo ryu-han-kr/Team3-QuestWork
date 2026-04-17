@@ -1,0 +1,100 @@
+# ============================
+# OS 생성 파일
+# ============================
+# macOS 폴더 메타데이터 / Windows 썸네일 캐시 - 코드와 무관한 시스템 파일
+.DS_Store
+Thumbs.db
+
+# ============================
+# 로그
+# ============================
+# 실행 중 생성되는 로그 파일 - 환경마다 달라서 추적 불필요
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============================
+# 환경 변수 / 민감 정보 (절대 올리면 안 됨)
+# ============================
+# API 키, 비밀번호 등 실제 인증 정보가 담긴 파일
+.env
+.env.*
+.env*.local
+
+# ============================
+# Backend (Spring Boot)
+# ============================
+# Maven 빌드 결과물 - 소스에서 다시 생성 가능
+target/
+build/
+out/
+*.class
+
+# Maven wrapper jar - 바이너리 파일은 git에 불필요
+.mvn/wrapper/maven-wrapper.jar
+
+# 실제 DB 접속 정보(username/password)가 담긴 설정 파일
+# 팀원은 각자 본인 환경에 맞게 작성 (application.properties.example 참고)
+**/src/main/resources/application.properties
+**/src/main/resources/application-*.properties
+**/src/main/resources/application-*.yml
+
+# IDE 설정 - 개인 환경 설정이므로 공유 불필요
+.idea/
+.idea/workspace.xml
+.idea/usage.statistics.xml
+.idea/shelf/
+*.iws
+*.iml
+*.ipr
+.vscode/
+.settings/
+.classpath
+.project
+.factorypath
+.springBeans
+.sts4-cache
+.apt_generated
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/nbdist/
+/.nb-gradle/
+
+# ============================
+# Frontend (Next.js)
+# ============================
+# 의존성 패키지 디렉토리 - pnpm install 로 다시 생성 가능, 용량 매우 큼
+node_modules/
+
+# Next.js 빌드 캐시 및 결과물 - 빌드 시 다시 생성됨
+.next/
+
+# TypeScript 증분 빌드 캐시
+*.tsbuildinfo
+
+# Turbo / Vercel 설정
+.turbo/
+.vercel/
+next.user-config.*
+
+# v0 내부 파일 (v0.dev 샌드박스 전용)
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+.snowflake/
+.v0-trash/
+
+# ESLint 캐시
+.eslintcache
+
+# pnpm 디버그 로그
+.pnpm-debug.log*
+
+# ============================
+# 테스트 커버리지
+# ============================
+# 자동 생성되는 커버리지 리포트
+coverage/

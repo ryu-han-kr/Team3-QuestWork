@@ -1,0 +1,73 @@
+"use client"
+
+import { Search } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+import type { Role, Status } from "@/app/admin/page"
+
+interface SearchFilterProps {
+  searchQuery: string
+  onSearchChange: (value: string) => void
+  roleFilter: Role | "전체"
+  onRoleFilterChange: (value: Role | "전체") => void
+  statusFilter: Status | "전체"
+  onStatusFilterChange: (value: Status | "전체") => void
+}
+
+export function SearchFilter({
+  searchQuery,
+  onSearchChange,
+  roleFilter,
+  onRoleFilterChange,
+  statusFilter,
+  onStatusFilterChange,
+}: SearchFilterProps) {
+  return (
+    <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="relative w-full sm:max-w-sm">
+        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+        <Input
+          placeholder="이름 또는 이메일로 검색..."
+          value={searchQuery}
+          onChange={(e) => onSearchChange(e.target.value)}
+          className="pl-10"
+        />
+      </div>
+      <div className="flex gap-3">
+        <Select
+          value={roleFilter}
+          onValueChange={(value) => onRoleFilterChange(value as Role | "전체")}
+        >
+          <SelectTrigger className="w-35">
+            <SelectValue placeholder="권한 필터" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="전체">전체 권한</SelectItem>
+            <SelectItem value="회원">회원</SelectItem>
+            <SelectItem value="매니저">매니저</SelectItem>
+            <SelectItem value="관리자">관리자</SelectItem>
+          </SelectContent>
+        </Select>
+        <Select
+          value={statusFilter}
+          onValueChange={(value) => onStatusFilterChange(value as Status | "전체")}
+        >
+          <SelectTrigger className="w-35">
+            <SelectValue placeholder="상태 필터" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="전체">전체 상태</SelectItem>
+            <SelectItem value="활성화">활성화</SelectItem>
+            <SelectItem value="비활성화">비활성화</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+    </div>
+  )
+}

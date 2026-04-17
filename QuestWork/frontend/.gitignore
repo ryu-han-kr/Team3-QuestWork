@@ -1,16 +1,35 @@
-# v0 sandbox internal files
+# 의존성 패키지 - pnpm install 로 다시 생성 가능, 용량 매우 큼
+node_modules/
+
+# Next.js 빌드 캐시 및 결과물 - 빌드 시 다시 생성됨
+.next/
+
+# 환경 변수 - API 키 등 민감 정보 포함 가능
+.env*.local
+.env
+.env.*
+
+# TypeScript 증분 빌드 캐시
+*.tsbuildinfo
+
+# Turbo / Vercel 배포 설정
+.turbo/
+.vercel/
+next.user-config.*
+
+# v0.dev 샌드박스 전용 내부 파일
 __v0_runtime_loader.js
 __v0_devtools.tsx
 __v0_jsx-dev-runtime.ts
 .snowflake/
 .v0-trash/
-.vercel/
-next.user-config.*
 
-# Environment variables
-.env*.local
+# ESLint 캐시
+.eslintcache
 
-# Common ignores
-node_modules
-.next/
+# pnpm 디버그 로그
+.pnpm-debug.log*
+
+# OS
 .DS_Store
+Thumbs.db
