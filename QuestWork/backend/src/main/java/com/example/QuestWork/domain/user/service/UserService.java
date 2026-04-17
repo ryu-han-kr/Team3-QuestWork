@@ -7,11 +7,10 @@ import com.example.QuestWork.domain.user.dto.UserSignupRequesetDto;
 import com.example.QuestWork.domain.user.entity.User;
 import com.example.QuestWork.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.lang.NonNull;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.time.LocalDateTime;
 
 
 @Service
@@ -36,7 +35,7 @@ public class UserService {
         }
 
         //Dto -> Entity 변환
-        User user = User.builder()
+       User user = User.builder()
                 .username(dto.getUsername())
                 .password(passwordEncoder.encode(dto.getPassword()))
                 .email(dto.getEmail())
